@@ -1,0 +1,164 @@
+<html>
+<head>
+	<title>Free Email Reminder Service</title>
+	<LINK REL=STYLESHEET HREF="http://www3.telus.net/stephanstan/css/Stephan.css" TYPE="text/css">
+</head>
+
+<body>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- some javascript to count the reminder message length
+function validate (form)
+{
+	var str = form.message.value
+    document.forms[0].totlen.value=str.length
+}
+// end of hidden code --->
+</SCRIPT>
+
+<table border=0 width=100%>
+<tr>
+	<td><img src="http://www3.telus.net/stephanstan/images/buttons/clockwings.gif" width=200 height=152 border=0 alt=" "></td>
+	<td><font face=arial size=5 color=#0000FF><b>Free Reminder Service.</b></font>
+	<br><br>
+<font face=arial size=3 color=#0000FF>
+If you also forget birthdays, dentist dates, vet appointments,
+business meetings, car registration dates, gig dates..... Well, this
+service is for you. It's does not cost a thing, and saves you the embarrasment of forgetting an important date.
+	</td>
+</tr>
+</table>
+<font face=arial size=3>
+<ul>
+     <li>This reminder service is <b>FREE!</b>
+     <li>Simply fill out the form and we will remind you by e-mail on the day you specify.
+     <li>Reminder messages are transmitted at 00h30 GMT.
+     <li>(The fields in <b>bold</b> are mandatory).
+     <li>Need help? See the <A HREF="http://www.candor.com/reminder/remhelp.htm">Reminder Help Page</A> for details.
+</ul>
+
+<form action="http://www.candor.com/scripts/reminder/reminder.asp" method="POST">
+<input type=hidden name="progname" value="remmain">
+<input type=hidden name="prodid" value="ctrem04">
+<input type=hidden name="refid" value="download">
+
+<table border=0>
+<tr>
+	<td>
+	<b><font face="Arial" size=2>Login Email:</font></font></b></td>
+	<td colspan=2><input type=text size=30 maxlength=60 name="email_address" value=""></td>
+</tr>
+
+<tr>
+	<td><b><font face="Arial" size=2>Password:</font></font></b></td>
+	<td colspan=2><input type=password size=11 maxlength=10 name="passwrd" value=""></td>
+</tr>
+<tr>
+	<td><font face="Arial" size=1>New users confirm password:</font></td>
+	<td colspan=2><input type=password size=11 maxlength=10 name="confpwd" value=""></td>
+</tr>
+</table>
+
+<table border=0>
+<tr>
+	<td><font face=Arial size=2><u>Reminder date</td>
+	<td><font face=Arial size=2><u>Remind me</td>
+	<td><font face=Arial size=2><u>Send reminder</td>
+</tr>
+
+<tr>
+	<td>
+<select name=day rows=1>
+<option selected value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+<option value="31">31
+</select>
+<select name=month rows=1>
+<option selected value="1">January
+<option value="2">February
+<option value="3">March
+<option value="4">April
+<option value="5">May
+<option value="6">June
+<option value="7">July
+<option value="8">August
+<option value="9">September
+<option value="10">October
+<option value="11">November
+<option value="12">December
+</select>
+	</td>
+	<td>
+<select name=remind rows=1>
+<option value="0">On the day
+<option selected value="1">1 day before
+<option value="3">3 days before
+<option value="7">1 week before
+<option value="14">2 weeks before
+</select>
+	</td>
+	<td>
+<select name=repeat rows=1>
+<option value="0">Once only</option>
+<option selected value="1">Every Year</option>
+</select>
+	</td>
+</tr>
+</table>
+
+
+<table border=0>
+<tr>
+	<td colspan=2><font face=Arial size=2>Reminder Message (250 characters max)</td>
+</tr>
+<tr>
+	<td><textarea name=message rows=5 cols=50 wrap=virtual></textarea></td>
+	<td valign=top><font face=arial size=2>message length:
+	<INPUT TYPE=button NAME="calstr" VALUE="check length" ONCLICK="validate(this.form)">
+	<br>
+	<INPUT NAME="totlen" size=5></td>
+</tr>
+<tr>
+	<td valign=top>
+	<input type="submit" name="add" value="Add Reminder">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="submit" name="list" value="List Reminders">
+	</td>
+	<td>&nbsp;</td>
+</tr>
+</table>
+</form>
+
+<hr>
+Reminder processing provided with compliments
+by <a href="http://www.candor.com/services/">Candor Webtech.</a>
+</body>
+</html>

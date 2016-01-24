@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+	<TITLE>Streaming Media JukeBox</TITLE>
+	<LINK REL=STYLESHEET HREF="Stephan.css" TYPE="text/css">
+
+<SCRIPT LANGUAGE = "JavaScript">
+var streams = new Array();
+	streams[0] = new makeStream("http://msdn.microsoft.com/downloads/samples/Internet/imedia/netshow/smedia/NS3/JavaScript/Buttons/control.asx", "Microsoft Promo for Windows Media Player");
+	streams[1] = new makeStream("http://www.advintsol.com/webmaster030399/webmaster.asx", "Microsoft Training for Windows Media Player");
+	streams[2] = new makeStream("mms://netshow.microsoft.com/ms/sbnasfs/wmt/turtle28.asf", "The Turtle");
+	streams[3] = new makeStream("mms://netshow.microsoft.com/ms/sbnasfs/wmt/wmt.asf", "Flying Windows Media Player logo");
+
+function bName() {
+  if (navigator.appName == "Microsoft Internet Explorer")
+    return 1;
+  if (navigator.appName == "Netscape")
+    return 2;
+  return 0;
+}
+
+function bVer() {
+  // return version number (e.g., 4.03)
+  return parseFloat(navigator.appVersion)
+}
+
+var nameCode = bName();
+var versionCode = bVer();
+var mac = (navigator.userAgent.indexOf("Mac")!=-1);
+var activeX = (nameCode == 1 && versionCode >= 4.0) ? true : false; 
+
+function makeStream(url, name) {
+	this.url = url;
+	this.name = name;
+}
+
+function setShowControls(flag) {
+  if (activeX)
+    document.mediaPlayer.showControls = flag
+  else
+    document.mediaPlayer.SetShowControls(flag);
+}
+
+function getShowControls() {
+  if (activeX)
+    return document.mediaPlayer.showControls;
+  else
+    return document.mediaPlayer.GetShowControls();
+}
+
+function getPlayState() {
+  if (activeX)
+    return document.mediaPlayer.playState
+  else
+    return document.mediaPlayer.GetPlayState();
+}
+
+function setDisplaySize(size) {
+  if (activeX)
+    document.mediaPlayer.displaySize = size
+  else
+    document.mediaPlayer.SetDisplaySize(size);
+}
+
+function setFileName(url) {
+  if (activeX)
+    document.mediaPlayer.fileName = url
+  else
+    document.mediaPlayer.SetFileName(url);
+}
+
+function handleControlsOnOffClick() {
+  if (getShowControls() == true) {
+    setShowControls(false);
+	document.displayMode.controls.value = "  Show Controls ";
+  }
+  else {
+    setShowControls(true);
+	document.displayMode.controls.value = "  Hide Controls "
+  }
+}
+
+function handlePlayOrPauseClick(){
+  var state;
+  playerStatus = getPlayState();
+  if (playerStatus == 6) {
+    document.mediaPlayer.Play();
+    document.displayMode.playOrPause.value = " Pause ";
+  } 
+  else if (playerStatus == 1) {
+    document.mediaPlayer.Play();
+    document.displayMode.playOrPause.value = " Pause ";
+  } 
+  else if (playerStatus == 2) {
+    document.mediaPlayer.Pause();
+    document.displayMode.playOrPause.value = " Play  ";
+  }
+} 
+
+function change() {
+  var list = document.playerCtrl.streams;
+  var streamURL = list.options[list.selectedIndex].value;
+  document.mediaPlayer.Stop();
+  document.displayMode.playOrPause.value = " Pause ";
+  setFileName(streamURL);
+}
+
+</SCRIPT>
+</HEAD>
+<BODY LEFTMARGIN = "100">
+<h3 align=center>Streaming Media JukeBox</h3><P><P>
+<DIV align=center>
+<SCRIPT LANGUAGE="JavaScript">
+with (document) {
+  writeln('<OBJECT');
+  writeln('  ID="mediaPlayer"');  
+  writeln('  CLASSID="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95"');
+  writeln(
+ 'CODEBASE="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"');
+  writeln('  STANDBY="Loading Microsoft Windows Media Player components..."');
+  writeln('  TYPE="application/x-oleobject">');
+  writeln('<PARAM NAME="fileName" VALUE="http://msdn.microsoft.com/downloads/samples/Internet/imedia/netshow/smedia/NS3/JavaScript/Buttons/control.asx">');
+  writeln('<PARAM NAME="animationatStart" VALUE="true">');
+  writeln('<PARAM NAME="transparentatStart" VALUE="true">');
+  writeln('<PARAM NAME="autoStart" VALUE="true">');
+  writeln('<PARAM NAME="showControls" VALUE="true">');
+  writeln('<EMBED TYPE="application/x-mplayer2"');
+  writeln('  PLUGINSPAGE="http://microsoft.com/windows/mediaplayer/en/download/"');
+  writeln('  ID=mediaPlayer');
+  writeln('  NAME="mediaPlayer"');
+  writeln('  DISPLAYSIZE="4"');		// Fit To Size
+  writeln('  AUTOSIZE="-1"');
+  writeln('  BGCOLOR="darkblue"');
+  writeln('  SHOWCONTROLS="-1" ');
+  writeln('  SHOWTRACKER="-1"');
+  writeln('  SHOWDISPLAY="0"');
+  writeln('  SHOWSTATUSBAR="-1"');
+  writeln('  VIDEOBORDER3D="-1"');
+  writeln('  WIDTH=320');
+  writeln('  HEIGHT=300');
+ writeln('SRC="http://msdn.microsoft.com/downloads/samples/Internet/imedia/netshow/smedia/NS3/JavaScript/Buttons/control.asx"')
+  writeln('  AUTOSTART="-1" ');
+  writeln('  DESIGNTIMESP="5311"');
+  writeln('  >');
+  writeln('</EMBED>');
+  writeln('</OBJECT><P>');
+  writeln('<FORM NAME="playerCtrl">');
+  writeln('<SELECT NAME="streams" onChange="change()">');
+  for (var i = 0; i < streams.length; i++) {
+    writeln('  <OPTION VALUE="', streams[i].url, '">', streams[i].name);
+  }
+  writeln('</SELECT>');
+  writeln('</FORM>');
+}
+</SCRIPT>
+
+<FORM NAME="displayMode">
+<INPUT TYPE="button" VALUE=" Pause " NAME="playOrPause" onClick="handlePlayOrPauseClick()" >
+<INPUT TYPE="button" VALUE="  Hide Controls " NAME="controls" onClick="handleControlsOnOffClick()" ><BR>
+<INPUT TYPE="button" VALUE=" Small " NAME="small" onclick="setDisplaySize(1)">
+<INPUT TYPE="button" VALUE=" Normal " NAME="normal" onclick="setDisplaySize(0)">
+<INPUT TYPE="button" VALUE=" Large  " NAME="large" onclick="setDisplaySize(2)"><BR><BR>
+</FORM>
+</DIV>
+</BODY>
+</HTML>

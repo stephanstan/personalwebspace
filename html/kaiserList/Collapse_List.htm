@@ -1,0 +1,214 @@
+<HTML>
+	<HEAD>
+		<TITLE>JavaScript DHTML Collapsible Lists</TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+		<STYLE TYPE="text/css">
+				#lItem0 { position:absolute; }
+				#lItem1 { position:absolute; }
+				#lItem2 { position:absolute; }
+				#lItem3 { position:absolute; }
+				#lItem4 { position:absolute; }
+				#lItem5 { position:absolute; }
+				#lItem6 { position:absolute; }
+				#lItem7 { position:absolute; }
+				#lItem8 { position:absolute; }
+				#lItem9 { position:absolute; }
+				#lItem10 { position:absolute; }
+				#lItem11 { position:absolute; }
+				#lItem12 { position:absolute; }
+				#lItem13 { position:absolute; }
+				#lItem14 { position:absolute; }
+				#lItem15 { position:absolute; }
+				#lItem16 { position:absolute; }
+				#lItem17 { position:absolute; }
+				#lItem18 { position:absolute; }
+				#lItem19 { position:absolute; }
+				#lItem20 { position:absolute; }
+				#lItem21 { position:absolute; }
+				#lItem22 { position:absolute; }
+				#lItem23 { position:absolute; }
+				#lItem24 { position:absolute; }
+				#lItem25 { position:absolute; }
+				#lItem26 { position:absolute; }
+				#lItem27 { position:absolute; }
+				#lItem28 { position:absolute; }
+		</STYLE>
+
+	</HEAD>
+		<SCRIPT LANGUAGE="JavaScript1.2" SRC="list.js"></SCRIPT>
+
+		<SCRIPT LANGUAGE="JavaScript">
+		     function init() {
+				var width = 700, height = 22;
+				var backgroundColor="6699FF";	//"#CCCCCC"
+				kaiserList = new List(true, width, height, backgroundColor);
+				kaiserList.addItem("<STRONG>KAISER CARD GAME<STRONG>");
+				subList			= new List(true, width, height, backgroundColor);
+				textCards		= new List (false, width, height*12,backgroundColor);
+				textDealing		= new List (false, width, height*10,backgroundColor);
+				textTrick		= new List (false, width, height*6,backgroundColor);
+				textConcept		= new List (false, width, height*6,backgroundColor);
+				textBidding		= new List (false, width, height*20,backgroundColor);
+				textScoring		= new List (false, width, height*10,backgroundColor);
+				textTrump		= new List (false, width, height*5,backgroundColor);
+				textNoTrump		= new List (false, width, height*4,backgroundColor);
+				textPenalty		= new List (false, width, height*4,backgroundColor);
+				textMinus		= new List (false, width, height*5,backgroundColor);
+				textScoringOver	= new List (false, width, height*8,backgroundColor);
+				textMisDeal		= new List (false, width, height*9,backgroundColor);
+				textTournament	= new List (false, width, height*4,backgroundColor);
+				textConclusion	= new List (false, width, height*2,backgroundColor);
+
+				kaiserList.addList(subList, "Rules/Explaination");
+					subList.addList(textCards, "The Cards");
+						textCards.addItem("Kaiser is a unique card game designed for four players each player playing in partnership with the player sitting directly opposite to him.  The object of the game is to score fifty-two (52) points at which time they win the game.<br>" +
+						"The Kaiser deck is composed of thirty-two cards.<br><br>" +
+						"Ace, King, etc of Diamonds through to the 7 of Diamonds.<br><br>" +
+						"Ace, King, etc of Clubs through to the 7 of Clubs.<br><br>" +
+						"Ace, King, etc of Hearts through to the 8 of Hearts plus the 5 of Hearts.<br><br>" +
+						"Ace, King, etc of Spades through to the 8 of Spades plus the 3 of Spades.");
+					subList.addList(textDealing, "Dealing the Cards");
+							textDealing.addItem("One player is designated the dealer and proceeds to deal the cards out one at a time in a clockwise direction,until all cards are dealt, such that each player has eight cards.  There is a definite advantage to being the dealer, so an equitable method such as cutting high card is used to determine the dealer.  The highest bidder gets to lead the first card.  All players must follow suit, for example if a club is led all players must play a club if they have one in their hand.  Should a player not have a club, he may choose to play a trump card or discard any card in his hand he so wishes to.  If no trump cards are present, the highest card of the suit led wins the trick.  The cards in Kaiser all have face value.  With the ace being the highest rank, the king next etc., down the line.  The highest bidder get to declare the trump suite he wishes to play in, if a player wishes to play no trump, he must state so at the time that he declares his bid.");
+					subList.addList(textTrick, "Trick Value");
+						textTrick.addItem("Each trick won by a team is worth one point.  The team winning the trick containing the five of hearts gets five bonus points.  The team taking the trick with the three of spades suffers a loss of three penalty points.  For example, if a team takes four tricks with one trick containing the five of hearts and one trick containing the three of spades, they would count 4 points for the four tricks taken, plus 5 points for the five of hearts to make a total of nine, less three points for the three of spades thus ending up with 6 points for the hand.");
+					subList.addList(textConcept, "Game Concept");
+						textConcept.addItem("The concept of Kaiser is to plan the strategy of the hand of the cards dealt to you so that with the help of your partner, you are able to win as many tricks as possible.  Each trick won is worth one point.  The trick containing the five of hearts is worth five bonus points and the trick containing the three of spades has three penalty points.  Therefore, the whole game revolves around taking the trick with the five of hearts and trying to give the opposition the trick with the three of spades.");
+					subList.addList(textBidding, "Bidding Procedures");
+						textBidding.addItem("The bidding procedure is as follows:<br>" +
+"a. The player sitting to the left of the dealer gets to bid first.  The minimum bid he can make is five and the maximum bid he can make is twelve.  If the player does not wish to or cannot make a bid, he must pass and let the next person sitting to his left bid.<br><br>" +
+"b. Each player gets to bid only once per hand played, therefore it is important to bid as high as you possibly can because you only get one chance.<br><br>" +
+"c. Each player must bid higher that the preceding bidder or he must pass.  There are only two exceptions to this rule.  One exception pertains to a no trump bid for example: a seven no trump bid is deemed to be higher then a bid of seven in a trump suit.  Therefore, is player one bid seven, player two can bid seven no trump and is the higher bidder.  The second exception to the rule pertains to the dealer.  The dealer always has the right to play at the same level as the highest bid preceding him.  For example, if the highest bid is seven when it comes to the dealer's turn, he can in turn bid seven and is the highest bidder.<br><br>" +
+"d. Any player wishing to make a bid in no trump must do so at the time that he declares his bid as previously mentioned.<br><br>" +
+"e. All other bids in a trump suit are not declared until the highest bid is determined.  The higher bidder then declares the trump suit he wishes to play in.");
+					subList.addList(textScoring, "Scoring");
+						textScoring.addItem("We will now deal with the method of scoring.  As previously mentioned, the object of the game is to get fifty-two points before your opposition in order to win.  The highest bidder gets to declare trump and leads the first card.  For example, if he bid seven, then his team must make a combination of tricks and bonus points to total at least seven.  If this is achieved, the team is then given seven points.  All other tricks over seven are counted one point each.  For example, if a team bid seven and makes eight points, they are given credit for eight points, not just the seven that they were required to make.<br>However, if the team does not make the seven tricks they bid, they then lose seven points.  For example, if a team bids seven and only makes five tricks, they then lose seven from their present score.  The opposing team counts one point per number of tricks it makes.  As mentioned before, each trick is worth one point.");
+					subList.addList(textTrump, "Trump Bidding");
+						textTrump.addItem("The highest bidder gets to declare the trump suit his wishes to play in.  For example, if the highest bidder has declared clubs trump suit, at any point in the game, any player not being able to follow suit, can play a club to win the trick.  For example, if a player one leads the ace of diamonds and player two does not have any diamonds, he can play any club suited card to beat the ace of diamonds to win the trick.");
+					subList.addList(textNoTrump, "No Trump Bidding");
+						textNoTrump.addItem("Any bid in a no trump is worth double its value.  That is if a team bids seven no trump and is successful, they get fourteen points.  By the same token if they do not make their seven bid, they go backwards fourteen points.  The opposition in a no trump bid counts as before one point per trick.");
+					subList.addList(textPenalty, "Penalty Points");
+						textPenalty.addItem("As mentioned before, the trick containing the three of spades has three penalty points.  For example, if a team takes one trick with the three of spades, they go back three full points.  Or, if they should take the trick with the three of spades and two other tricks, they then break even.");
+					subList.addList(textMinus, "Minus Scoring");
+						textMinus.addItem("At any point in a game, if a team does not have enough points to cover a lost hand they then have to minus score.  For example, if a team bid seven on the first hand of a game and didn't make it, they are scored at minus seven.  Should a team at any point in the game get to a minus 52 score position, the game is automatically lost.  Just as you win at 52 points, you automatically lose at minus 52 points.");
+					subList.addList(textScoringOver, "Scoring at 47 Points or over");
+						textScoringOver.addItem("Once a team gets within five points of winning a game, they must successfully bid a hand or steal the five of heats away from the opposition in order to advance in scoring to win the game.  That is once you have 47, 48, 49, 50 or 51 points you cannot win the game counting two or three points at a time, when the opposition is bidding.  You must make a successful bid or take the five or hearts to win the game.  Four example, if the score is 47 for one team and 40 points for the other, should the team of 40 points bid a hand of seven and be successful they would advance to 47, but the team with 47 points would count no tricks.");
+					subList.addList(textMisDeal, "Misdeal");
+						textMisDeal.addItem("A misdeal can be called by any player not being dealt at least one face card.  Aces are classed as face cards.  As misdeal can also be called by any player who is dealt 4 eights, 4 nines, or 4 tens.  In either of the above mentioned examples, the player calling for a new deal must do so when it is his turn to bid.  For example, if you are the second bidder and you wish to call a misdeal, you must do so when it comes your time to bid.  You cannot wait until all the players have bid to declare your misdeal.<br><br>Should all four players pass during a bidding procedure, again there is a misdeal.  Whenever a hand is dealt over again, the cards pass on to the next player, the hand is never re-dealt by the same player.");
+					subList.addList(textTournament, "Tournament Rules");
+						textTournament.addItem("Time becomes a definite factor during Kaiser tournaments, so there have been several rules instituted to speed up the game.  First there are no misdeals, every hand must be played.  Minimum bid becomes seven instead of five.  If all players pass the dealer must play for seven, he can not pass.  There is a one hour time limit for each game played.");
+					subList.addList(textConclusion, "Conclusion");
+						textConclusion.addItem("The competitive nature of this game provides the challenge that is required for a very entertaining and successful card game.");
+				kaiserList.build(20,40);
+		     }
+	     </SCRIPT>
+
+<BODY BACKGROUND = "http://www3.telus.net/stephanstan/html/kaiserList/kaiserHand.jpg" ONLOAD="init();">
+<a href="KaiserRules.htm">Kaiser Rules Printable version</a>
+<DIV ID="lItem0" NAME="lItem0"></DIV>
+<DIV ID="lItem1" NAME="lItem1"></DIV>
+<DIV ID="lItem2" NAME="lItem2"></DIV>
+<DIV ID="lItem3" NAME="lItem3"></DIV>
+<DIV ID="lItem4" NAME="lItem4"></DIV>
+<DIV ID="lItem5" NAME="lItem5"></DIV>
+<DIV ID="lItem6" NAME="lItem6"></DIV>
+<DIV ID="lItem7" NAME="lItem7"></DIV>
+<DIV ID="lItem8" NAME="lItem8"></DIV>
+<DIV ID="lItem9" NAME="lItem9"></DIV>
+<DIV ID="lItem10" NAME="lItem10"></DIV>
+<DIV ID="lItem11" NAME="lItem11"></DIV>
+<DIV ID="lItem12" NAME="lItem12"></DIV>
+<DIV ID="lItem13" NAME="lItem13"></DIV>
+<DIV ID="lItem14" NAME="lItem14"></DIV>
+<DIV ID="lItem15" NAME="lItem15"></DIV>
+<DIV ID="lItem16" NAME="lItem16"></DIV>
+<DIV ID="lItem17" NAME="lItem17"></DIV>
+<DIV ID="lItem18" NAME="lItem18"></DIV>
+<DIV ID="lItem19" NAME="lItem19"></DIV>
+<DIV ID="lItem20" NAME="lItem20"></DIV>
+<DIV ID="lItem21" NAME="lItem21"></DIV>
+<DIV ID="lItem22" NAME="lItem22"></DIV>
+<DIV ID="lItem23" NAME="lItem23"></DIV>
+<DIV ID="lItem24" NAME="lItem24"></DIV>
+<DIV ID="lItem25" NAME="lItem25"></DIV>
+<DIV ID="lItem26" NAME="lItem26"></DIV>
+<DIV ID="lItem27" NAME="lItem27"></DIV>
+<DIV ID="lItem28" NAME="lItem28"></DIV>
+
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+
+</BODY>
+</HTML>
+
+

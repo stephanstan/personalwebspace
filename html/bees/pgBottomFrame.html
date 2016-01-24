@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<LINK REL=STYLESHEET HREF="http://www3.telus.net/stephanstan/css/Stephan.css" TYPE="text/css">
+
+<TITLE>Bottomframe</TITLE>
+</HEAD>
+<BODY>
+
+<script language="JavaScript">
+
+<!-- Cloak from luzer browsers
+
+        /* JavaScript Slide Viewer v.09                         */
+        /* Copyright 1996, by Kevin Meltzer kevin@ctcom.com     */
+        /* Feel free to copy and use this sc	ript as long as all */
+        /* Of this notice, and all of the comments remain.      */
+
+var slide = -1
+var TotSlide = 10
+
+function next() {
+        if (slide == (TotSlide - 1)) {
+         alert("There are no more slides.")
+        return;
+        }
+ slide = slide + 1;
+ parent.frames[0].location.href=db[slide].site;
+document.FSlide.num.value = "Slide " + (slide + 1) + " of " + TotSlide;
+}
+
+function back() {
+        if (slide == 0) {
+         alert("This is the first slide.")
+         return;
+        }
+ slide = slide - 1;
+ parent.frames[0].location.href=db[slide].site;
+document.FSlide.num.value = "Slide " + (slide + 1) + " of " + TotSlide;
+}
+
+function makeArray(n) {
+        this.length = n;
+
+        for (var i = 0; i<= n; i++) {
+                this[i] = 0
+        }
+        return this
+}
+
+function where(site) {
+        this.site = site;
+        return this
+}
+
+var db = new makeArray(10)
+db[0] = new where("http://www3.telus.net/stephanstan/images/beePictures/againsttrees.jpg")
+db[1] = new where("http://www3.telus.net/stephanstan/images/beePictures/flower1.jpg")
+db[2] = new where("http://www3.telus.net/stephanstan/images/beePictures/flower2.jpg")
+db[3] = new where("http://www3.telus.net/stephanstan/images/beePictures/yellowfield.jpg")
+db[4] = new where("http://www3.telus.net/stephanstan/images/beePictures/wholeframe.jpg")
+db[5] = new where("http://www3.telus.net/stephanstan/images/beePictures/whiteframe.jpg")
+db[6] = new where("http://www3.telus.net/stephanstan/images/beePictures/openhive.jpg")
+db[7] = new where("http://www3.telus.net/stephanstan/images/beePictures/openhive2.jpg")
+db[8] = new where("http://www3.telus.net/stephanstan/images/beePictures/fuzzybum.jpg")
+db[9] = new where("http://www3.telus.net/stephanstan/images/beePictures/brood.jpg")
+
+// -- deCloack -->
+
+</script>
+
+<center>
+<form name="FSlide">
+<input type=button value="Next" onClick="next()">
+<input type=button value="Previous" onClick="back()"><br>
+<input type=text value="" name="num" size=15>
+</form>
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Access by Invitation</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+
+	<script language="javascript">
+		function loadpage()
+		{
+			document.location.href= "../" + document.frm.pswd.value + ".html"
+		}
+	</script>
+
+	<body>
+		<div align="center">
+			<H1>  	Access by Invitation</H1>
+
+
+		<table border="0">
+	<form name="frm">
+			<tr>
+				<td>Password:</td>
+				<td>
+					<input type="password" name="pswd">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div align="center">
+					  <input type="button" name="button" value="Submit" onClick="loadpage()">
+					</div>
+				</td>
+			</tr>
+	</form>
+			<tr>
+				<td colspan="2">
+					<div align="center">
+	<form>
+						<input type="button" value="Back...." onClick="history.back()" name="Button">
+	</form>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>
