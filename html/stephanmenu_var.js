@@ -89,10 +89,10 @@ Menu2=new Array("Financial","blank.htm","",4);
 		Menu2_4_6=new Array("Investor's Digest of Canada","http://www.adviceforinvestors.com","",0);
 
 Menu3=new Array("Mail","blank.htm","",4);
-	Menu3_1=new Array("GMAIL","https://accounts.google.com/b/0/ManageAccount?nroma=1","",0,20,180);
-	Menu3_2=new Array("TELUS","https://webmail.telus.net/telusbeta/driver?nimlet=showlogin","",0);
-	Menu3_3=new Array("HOTMAIL","http://ca.msn.com","",0);
-	Menu3_4=new Array("TELUS FAX","https://internetfax.telus.com/general/FindAccountS.asp","",0);
+	Menu3_1=new Array("Gmail","https://mail.google.com","",0,20,180);
+	Menu3_2=new Array("Telus Webmail","https://webmail.telus.net/telusbeta/driver?nimlet=showlogin","",0);
+	Menu3_3=new Array("Hotmail","http://ca.msn.com","",0);
+	Menu3_4=new Array("Telus Fax","https://internetfax.telus.com","",0);
 
 Menu4=new Array("Retail","javascript:top.location.href='blank.htm'","",9);
 	Menu4_1=new Array("Amazon.ca","http://www.amazon.ca","",0,20,140);
