@@ -12,7 +12,8 @@ table{
 }
 
 td {
-	border-right-style: 3px solid black;
+	border-right-style: solid 
+	border-width: 3px;
 }
 
 th {
