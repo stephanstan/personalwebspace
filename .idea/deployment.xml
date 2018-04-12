@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="telus" uploadOnCheckin="b9ed0d5d-5da1-4208-af74-78c828b8c45b">
+    <serverData>
+      <paths name="telus">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="telus" />
+  </component>
+</project>
